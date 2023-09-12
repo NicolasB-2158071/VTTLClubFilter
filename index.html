@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <title>VTLL club filter</title>
+    </head>
+    <body>
+        <main class="container">
+            <h1>VTLL club filter</h1>
+            <article>
+                <header>
+                    <h4>Filter options</h4>
+                    <!-- <a href="#" role="button">Export to CSV</a> -->
+                </header>
+                <div class="grid">
+                    <div>
+                        <label for="season">Season</label>
+                        <select id="season">
+                            <option disabled selected>...</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="club">Club</label>
+                        <select id="club">
+                            <option disabled selected>...</option>
+                        </select>
+                    </div>
+                </div>
+                <label for="filter">Filter type</label>
+                <select id="filter">
+                    <option value="ranking" selected>Ranking</option>
+                    <option value="most-matches">Most matches won</option>
+                    <option value="most-sets">Most sets won</option>
+                    <option value="most-lost-sets">Most sets won of lost matches</option>
+                </select>
+            </article>
+            <figure>
+                <table role="grid">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Matches played</th>
+                            <th scope="col">Matches won</th>
+                            <th scope="col">Sets won</th>
+                            <th scope="col">Sets won in loses</th>
+                        </tr>
+                    </thead>
+                    <tbody id="club-table">
+                    </tbody>
+                </table>
+            </figure>
+        </main>
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>
