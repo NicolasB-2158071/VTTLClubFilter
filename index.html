@@ -4,15 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+        <link rel="stylesheet" href="css/custom.css">
         <title>VTLL club filter</title>
     </head>
     <body>
         <main class="container">
-            <h1>VTLL club filter</h1>
+            <div class="space-between">
+                <h1>VTLL club filter</h1>
+                <a href="https://www.ttcsmashdolfijn.be/" target="_blank"><img src="logo.png" alt="TTC Smash Dolfijn logo"></a>
+            </div>
             <article>
                 <header>
                     <h4>Filter options</h4>
-                    <!-- <a href="#" role="button">Export to CSV</a> -->
                 </header>
                 <div class="grid">
                     <div>
@@ -33,7 +36,7 @@
                     <option value="ranking" selected>Ranking</option>
                     <option value="most-matches">Most matches won</option>
                     <option value="most-sets">Most sets won</option>
-                    <option value="most-lost-sets">Most sets won of lost matches</option>
+                    <option value="most-lost-sets">Most sets won in lost matches (Rudy Boesmans cup)</option>
                 </select>
             </article>
             <figure>
@@ -45,7 +48,7 @@
                             <th scope="col">Matches played</th>
                             <th scope="col">Matches won</th>
                             <th scope="col">Sets won</th>
-                            <th scope="col">Sets won in loses</th>
+                            <th scope="col">Sets won in loses (Rudy Boesmans)</th>
                         </tr>
                     </thead>
                     <tbody id="club-table">

@@ -1,0 +1,31 @@
+[data-theme="light"],
+:root:not([data-theme="dark"])  {
+    --primary: rgba(44, 96, 170, 0.3);
+    --primary-hover: rgba(44, 96, 170, 0.3);
+    --primary-focus: rgba(44, 96, 170, 0.3);
+    --primary-inverse: rgba(44, 96, 170, 0.3);
+    --card-sectionning-background-color: rgba(44, 96, 170, 0.3);
+    --table-row-stripped-background-color: rgba(44, 96, 170, 0.3);
+    --table-border-color: rgb(44, 96, 170);
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --primary: rgba(44, 96, 170, 0.3);
+        --primary-hover: rgba(44, 96, 170, 0.3);
+        --primary-focus: rgba(44, 96, 170, 0.3);
+        --primary-inverse: rgba(44, 96, 170, 0.3);
+    }
+}
+  
+[data-theme="dark"] {
+    --primary: rgba(44, 96, 170, 0.3);
+    --primary-hover: rgba(44, 96, 170, 0.3);
+    --primary-focus: rgba(44, 96, 170, 0.3);
+    --primary-inverse: rgba(44, 96, 170, 0.3);
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
