@@ -29,3 +29,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+.center-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: /*calc(var(--spacing) * .25)*/ 15px;
+}

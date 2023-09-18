@@ -6,25 +6,30 @@ export default async function members(club, season) {
 	return XmlNodes(xml, 'MemberEntries', parseMember);
 }
 
-function parseMember(xml) {
+function interpretResults(results) {
 	let matchesWon = 0;
 	let setsWon = 0;
-
-	let results = XmlNodes(xml, 'ResultEntries', parseResult);
 	for (let i = 0; i < results.length; ++i) {
 		if (results[i].result === "V") ++matchesWon;
 		setsWon += results[i].setsWon;
 	}
-
-	let member = {
-		//id: XmlString(xml, 'UniqueIndex'),
-		ranking: XmlString(xml, 'Ranking'),
-		lastname: XmlString(xml, 'LastName'),
-		firstname: XmlString(xml, 'FirstName'),
+	return {
 		matchesPlayed: results.length,
 		matchesWon: matchesWon,
 		setsWon: setsWon,
 		setWonInLoses: setsWon - matchesWon * 3
+	};
+}
+
+function parseMember(xml) {
+	let results = XmlNodes(xml, 'ResultEntries', parseResult);
+
+	let member = {
+		ranking: XmlString(xml, 'Ranking'),
+		lastname: XmlString(xml, 'LastName'),
+		firstname: XmlString(xml, 'FirstName'),
+		allResults: interpretResults(results),
+		tournamentLessResults: interpretResults(results.filter((result) => result.type === 'C'))
 	};
 
 	return member;
@@ -32,6 +37,7 @@ function parseMember(xml) {
 
 function parseResult(xml) {
 	return {
+		type: XmlString(xml, 'CompetitionType'),
 		setsWon: XmlInteger(xml, 'SetFor'),
 		result: XmlString(xml, 'Result')
 	};

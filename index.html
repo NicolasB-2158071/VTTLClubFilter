@@ -31,13 +31,23 @@
                         </select>
                     </div>
                 </div>
-                <label for="filter">Filter type</label>
-                <select id="filter">
-                    <option value="ranking" selected>Ranking</option>
-                    <option value="most-matches">Most matches won</option>
-                    <option value="most-sets">Most sets won</option>
-                    <option value="most-lost-sets">Most sets won in lost matches (Rudy Boesmans cup)</option>
-                </select>
+                <div class="grid">
+                    <div>
+                        <label for="filter">Filter type</label>
+                        <select id="filter">
+                            <option value="ranking" selected>Ranking</option>
+                            <option value="most-matches">Most matches won</option>
+                            <option value="most-sets">Most sets won</option>
+                            <option value="most-lost-sets">Most sets won in lost matches (Rudy Boesmans cup)</option>
+                        </select>
+                    </div>
+                    <div class="center-vertically">
+                        <label for="tournament">
+                            <input type="checkbox" id="tournament" name="tournament">
+                            Tournaments included
+                        </label>
+                    </div>
+                </div>
             </article>
             <figure>
                 <table role="grid">
